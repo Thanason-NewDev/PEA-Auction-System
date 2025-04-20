@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<head>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body style="margin: 0%;">
-    <div style="width: auto;">
-        <div style="width: 50%;">
-            <img src="img/PurpleBG.png">
-        </div>
-        <div style="width: 50%; background-color: white;">
-        </div>
-    </div>
-</body>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+      }
+
+      .purple-half {
+        width: 50%;
+        height: 100%;
+        background-image: url('your-purple-image.png'); /* use your image path */
+        background-size: cover;
+        background-position: center;
+      }
+
+      .right-half {
+        width: 50%;
+        height: 100%;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="purple-half"></div>
+    <div class="right-half"></div>
+  </body>
+</html>
