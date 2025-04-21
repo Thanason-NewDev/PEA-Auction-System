@@ -17,3 +17,31 @@ body {
     height: 100%;
     background: white;
   }
+  .logo-button {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #030650;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+    .logo-button:hover {
+        background-color: black;
+    }
+    .staffbutton {
+        font-size: 12px;
+        cursor: pointer;
+        color: rgb(144, 144, 144);
+    }
+    .staffbutton:hover {
+        background-color: black;
+    }
