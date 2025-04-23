@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Flicker Effect</title>
-    <style>
-        /* กำหนดการกระพริบ */
-        @keyframes flicker {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        /* กำหนดสไตล์ให้กับภาพ */
-        .flicker-image {
-            animation: flicker 1s infinite; /* ใช้การกระพริบแบบไม่จบสิ้น */
-        }
-    </style>
-</head>
-<body>
-
-    <img src="your-image-url.jpg" alt="Flickering Image" class="flicker-image">
-
-</body>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/LoginStyles.css">
+    <!--<script src="https://kit.fontawesome.com/c9c3f07a6d.js" crossorigin="anonymous"></script>-->
+  </head>
+  <body style="display: flex;">
+    <div class="purple-half"></div>
+    <div class="right-half">
+      <div style="text-align: center; margin: 25%; align-items: center;height: fit-content; box-shadow: 0 0 10px rgba(0 0 0 / 30%);">
+        <!--<i class="fa-solid fa-exclamation" style="text-align: center; color: black; background-color: yellow; margin: 5%; size: 20%; padding: 5%; border-radius: 50%;"></i>-->
+        <img src="../img/iconwarning.png" style="height: 30%; width: 30%; margin-top: 10%;" class="flicker-image">
+        <h1 style="text-align: center; padding-left: 10%; padding-right: 10%; padding-top: 10%; margin: 0px; font-size: 24px;">กรอกข้อมูลช่องทางรับ <span>OTP</span></h1>
+        <h3 style="text-align: center; padding-left: 10%; padding-right: 10%; padding-top: 2%; margin: 0px; font-size: 15px; color: gray; line-height: 150%;">กรุณากรอกช่องทางรับ <span>OTP</span> เพื่อยืนยันตัวตนและเข้าสู่ระบบ</h3>
+        <form id="otpForm" novalidate style="margin: 5%;">
+            <div class="option">
+                <label class="lb">
+                    <input type="radio" name="otp-method" checked>
+                    โทรศัพท์มือถือ 0**-****999
+                </label>
+                <label class="lb">
+                    <input type="radio" name="otp-method">
+                    อีเมล admintest@pea.ac.th
+                </label>
+            </div>
+            <div style="display: inline-flex; align-items: center; justify-content: center; gap: 10px;" class="button-group">
+            <div style="width: 50%;"><a href="../html/login.html" class="Back-button"><span>ยกเลิก</span></a></div>
+            <div style="width: 50%;"><a href="../html/otppass.html" class="Next-button"><span>ถัดไป</span></a></div>
+          </div>
+      </div>
+    </div>
+  </body>
 </html>
