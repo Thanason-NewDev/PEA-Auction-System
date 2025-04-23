@@ -45,3 +45,48 @@ body {
     .staffbutton:hover {
         color: black;
     }
+    .Back-button,
+    .Next-button {
+      margin-bottom: 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white; /* default */
+      border: 2px solid gray;  /* default */
+      border-radius: 8px;
+      color: black;            /* default */
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      height: 50px;
+      width: 100%;
+      padding: 12px 32px;
+      box-sizing: border-box;
+    }
+
+    .Back-button:hover {
+      background-color: gray;
+      border-color: black;
+    }
+
+    .Next-button {
+      background-color: #7E2CBA;
+      border-color: #7E2CBA;
+      color: white;
+    }
+
+    .Next-button:hover {
+      background-color: black;
+      border-color: black;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1;}
+      50% { opacity: 0.5;}
+      100% { opacity: 1;}
+    }
+
+    .flicker-image {
+      animation: flicker 2.5s infinite;
+    }

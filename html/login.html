@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/LoginStyles.css">
     <!--<script src="https://kit.fontawesome.com/c9c3f07a6d.js" crossorigin="anonymous"></script>-->
   </head>
   <body style="display: flex;">
@@ -9,12 +10,40 @@
     <div class="right-half">
       <div style="text-align: center; margin: 25%; align-items: center;height: fit-content; box-shadow: 0 0 10px rgba(0 0 0 / 30%);">
         <!--<i class="fa-solid fa-exclamation" style="text-align: center; color: black; background-color: yellow; margin: 5%; size: 20%; padding: 5%; border-radius: 50%;"></i>-->
-        <img src="../img/iconwarning.png" style="height: 30%; width: 30%; margin-top: 10%;">
+        <img src="../img/iconwarning.png" style="height: 30%; width: 30%; margin-top: 10%;" class="flicker-image">
         <h1 style="text-align: center; padding-left: 10%; padding-right: 10%; padding-top: 10%; margin: 0px; font-size: 24px;">กรอกข้อมูลช่องทางรับ <span>OTP</span></h1>
         <h3 style="text-align: center; padding-left: 10%; padding-right: 10%; padding-top: 2%; margin: 0px; font-size: 15px; color: gray; line-height: 150%;">กรุณากรอกช่องทางรับ <span>OTP</span> เพื่อยืนยันตัวตนและเข้าสู่ระบบ</h3>
-        <div class="form">
+        <form id="otpForm" novalidate style="margin: 5%;">
+          <div class="form-group">
+            <div style="margin-bottom: 5%;"><label for="phone">เบอร์โทรศัพท์มือถือ<span class="required">*</span></label></div>
+            <input type="tel" 
+                   id="phone" 
+                   name="phone" 
+                   class="form-input"
+                   placeholder="กรุณากรอกเบอร์โทรศัพท์มือถือ"
+                   pattern="[0-9]{10}"
+                   inputmode="numeric"
+                   required
+                   autocomplete="off"
+                   style="width: fit-content;">
+          </div>
 
-        </div>
+          <div class="form-group">
+            <div style="margin-bottom: 5%;"><label for="email">อีเมล<span class="required">*</span></label></div>
+            <input type="email" 
+                   id="email" 
+                   name="email" 
+                   class="form-input"
+                   placeholder="กรุณากรอกอีเมล"
+                   required
+                   autocomplete="off"
+                   style="width: fit-content;">
+          </div>
+          <p class="note" style="margin: 5%; color: #7E2CBA;">หมายเหตุ: เบอร์โทรศัพท์และอีเมลดังกล่าวจะถูกบันทึกไว้สำหรับใช้ในงานในระบบ</p>
+          <div style="display: inline-flex; align-items: center; justify-content: center; gap: 10px;" class="button-group">
+            <div style="width: 50%;"><a href="../index.html" class="Back-button"><span>ยกเลิก</span></a></div>
+            <div style="width: 50%;"><a href="../html/Choose-otp.html" class="Next-button"><span>ถัดไป</span></a></div>
+          </div>
       </div>
     </div>
   </body>
