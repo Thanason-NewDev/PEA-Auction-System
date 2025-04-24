@@ -1,165 +1,110 @@
 <!DOCTYPE html>
-<html lang="th">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OTP Input</title>
   <style>
     body {
       font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       background-color: #f0f2f5;
       margin: 0;
     }
 
-    .container {
-      width: 100%;
-      max-width: 500px;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .otp-box {
+    .navbar {
       display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 20px;
+      background-color: #ffffff;
+      padding: 10px 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    .otp-input {
-  width: 14%;
-  height: 50px;
-  font-size: 24px;
-  text-align: center;
-  border: 2px solid black;  /* กรอบสีดำ */
-  border-radius: 8px;
-}
-
-.otp-input:focus {
-  border-color: #007bff;  /* เมื่อโฟกัสจะเป็นสีฟ้า */
-  outline: none;
-}
-
-
-    .button-group {
+    .nav-left, .nav-center, .nav-right {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
     }
 
-    .Back-button, .btn-next {
-      display: inline-block;
-      width: 48%;
-      text-align: center;
-      padding: 12px 0;
-      border-radius: 8px;
-      font-size: 18px;
+    .nav-left {
+      width: 20%;
+    }
+
+    .nav-center {
+      width: 60%;
+    }
+
+    .nav-right {
+      width: 20%;
+    }
+
+    .logopea {
+      height: 40px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: black;
       text-decoration: none;
-      transition: 0.3s;
+      transition: color 0.3s ease;
     }
 
-    .Back-button {
-      border: 2px solid black;
-      color: black;
-      background-color: white;
+    .nav-links li a:hover {
+      color: #9333ea;
     }
 
-    .btn-next {
-      background-color: gray;
-      color: black;
-      opacity: 0.6;
-      pointer-events: none;
+    .nav-icons {
+      display: flex;
+      gap: 15px;
     }
 
-    .btn-next.active {
-      background-color: #28a745;
-      color: white;
-      opacity: 1;
-      pointer-events: auto;
+    .logout-btn {
+      background-color: transparent;
+      border: none;
+      padding: 6px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
     }
 
-    #timer {
-      font-size: 20px;
-      color: #dc3545;
-      margin-bottom: 10px;
+    .logout-btn:hover {
+      background-color: #ff4d4d;
+    }
+
+    .logout-btn img {
+      width: 20px;
+      height: auto;
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <h2>กรอกข้อมูลช่องทางรับ OTP</h2>
-    <img src="../img/iconwarning.png" id="statusIcon" style="height: 30%; width: 30%; margin-top: 10%;" class="flicker-image">
-    
-    <div class="otp-box">
-      <input type="text" maxlength="1" class="otp-input" />
-      <input type="text" maxlength="1" class="otp-input" />
-      <input type="text" maxlength="1" class="otp-input" />
-      <input type="text" maxlength="1" class="otp-input" />
-      <input type="text" maxlength="1" class="otp-input" />
-      <input type="text" maxlength="1" class="otp-input" />
+  <nav class="navbar">
+    <!-- ซ้าย 20% -->
+    <div class="nav-left">
+      <img src="../img/logopea.png" class="logopea">
     </div>
 
-    <div id="timer">05:00</div>
-
-    <div class="button-group">
-      <a href="../html/login.html" class="Back-button"><span>ยกเลิก</span></a>
-      <a href="../html/otppass.html" id="nextLink" class="btn-next"><span>ถัดไป</span></a>
+    <!-- กลาง 60% -->
+    <div class="nav-center">
+      <ul class="nav-links">
+        <li><a href="#">หน้าหลัก</a></li>
+        <li><a href="#">รายการประมูล</a></li>
+        <li><a href="#">รายการสั่งซื้อของฉัน</a></li>
+        <li><a href="#">ขอคืนหลักประกัน</a></li>
+        <li><a href="#">คำถามที่พบบ่อย</a></li>
+        <li><a href="#">ติดต่อเรา</a></li>
+      </ul>
     </div>
-  </div>
 
-  <script>
-    const inputs = document.querySelectorAll('.otp-input');
-    const nextBtn = document.getElementById('nextLink');
-    const icon = document.getElementById('statusIcon');
-    const timerDisplay = document.getElementById('timer');
-  
-    let countdown; // ต้องย้ายตัวแปรออกมาเพื่อให้สามารถ clear ได้จาก function อื่น
-  
-    function checkOTP() {
-      const allFilled = [...inputs].every(input => input.value.trim() !== '');
-      nextBtn.classList.toggle('active', allFilled);
-      icon.src = allFilled ? '../img/iconcorrect.png' : '../img/iconwarning.png';
-  
-      // ถ้าใส่ครบแล้ว ให้หยุดตัวจับเวลา
-      if (allFilled) {
-        clearInterval(countdown);
-      }
-    }
-  
-    inputs.forEach(input => {
-      input.addEventListener('input', () => {
-        if (input.value.length === 1) {
-          const next = input.nextElementSibling;
-          if (next && next.classList.contains('otp-input')) {
-            next.focus();
-          }
-        }
-        checkOTP();
-      });
-    });
-  
-    // เริ่มจับเวลา 5 นาที
-    let timeLeft = 5 * 60;
-    countdown = setInterval(() => {
-      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
-      const seconds = String(timeLeft % 60).padStart(2, '0');
-      timerDisplay.textContent = `${minutes}:${seconds}`;
-      timeLeft--;
-  
-      if (timeLeft < 0) {
-        clearInterval(countdown);
-        const allFilled = [...inputs].every(input => input.value.trim() !== '');
-        if (!allFilled) {
-          alert('หมดเวลา กรุณาขอ OTP ใหม่');
-          window.location.href = "../html/login.html";
-        }
-      }
-    }, 1000);
-  </script>
-  
+    <!-- ขวา 20% -->
+    <div class="nav-right">
+      <div class="nav-icons">
+        <a href="../index.html" class="logout-btn"><img src="../img/shopping-cart.png"></a>
+        <a href="../index.html" class="logout-btn"><img src="../img/bell.png"></a>
+        <a href="../index.html" class="logout-btn"><img src="../img/logout.png"></a>
+      </div>
+    </div>
+  </nav>
+</body>
+</html>
