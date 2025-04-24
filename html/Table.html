@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>รายการประมูล</title>
     <link rel="stylesheet" href="../css/desstyles.css">
+    <script src="https://kit.fontawesome.com/c9c3f07a6d.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -99,8 +100,21 @@
         </div>
       </div>
     </nav>
+    <!-- ย้อนกลับ + เป็นรูปแบบแสดงรายการ-->
+    <div style="display: flex; align-items: center; justify-content: left; margin-top: 50px; width: 100%;">
+      <span style="font-size: 36px; color: #640da2; margin-right: 10px; margin-left: 7%;">←</span>
+      <a href="../html/Table.html" style="color: #640da2; font-size: 16px; text-decoration: underline;">กลับสู่หน้าหลัก</a>
+    </div>    
+
+    <!-- table -->
     <div class="container position-relative" style="margin-top: 30px;">
-      <h2 class="mb-4"><strong>รายการประมูล</strong></h2>
+      <div style="display: inline;">
+        <h2 class="mb-4"><strong>รายการประมูล</strong></h2>
+        <div style="text-align: right;">
+          <a href="../html/Table.html"><img src="../img/logotable-sl.png" style="width: 3%;"></a>
+          <a href="../html/cardtable.html"><img src="../img/logocard-nsl.png" style="width: 3%;"></a>
+        </div>
+      </div>
       <br>
       <table class="table table-bordered custom-table">
         <thead class="table-light">
