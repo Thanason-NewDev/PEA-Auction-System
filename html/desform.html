@@ -13,7 +13,7 @@
             <!-- กลาง 60% -->
             <div class="nav-center">
               <ul class="nav-links">
-                <li><a href="../html/Table.html">หน้าหลัก</a></li>
+                <li><a href="../html/main.html">หน้าหลัก</a></li>
                 <li><a href="../html/Table.html">รายการประมูล</a></li>
                 <li><a href="#">รายการสั่งซื้อของฉัน</a></li>
                 <li><a href="#">ขอคืนหลักประกัน</a></li>
@@ -25,11 +25,129 @@
             <!-- ขวา 20% -->
             <div class="nav-right">
               <div class="nav-icons">
-                <a href="../index.html" class="logout-btn"><img src="../img/shopping-cart.png"></a>
-                <a href="../index.html" class="logout-btn"><img src="../img/bell.png"></a>
+                <a href="#" class="logout-btn"><img src="../img/shopping-cart.png"></a>
+                <a href="#" class="logout-btn"><img src="../img/bell.png"></a>
                 <a href="../index.html" class="logout-btn"><img src="../img/logout.png"></a>
               </div>
             </div>
-        </nav>
+          </nav>
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: left; margin-top: 50px; width: 100%;">
+                <span style="font-size: 36px; color: #640da2; margin-right: 10px; margin-left: 0%;">←</span>
+                <a href="../html/Table.html" style="color: #640da2; font-size: 16px; text-decoration: underline;">กลับสู่หน้าหลัก</a>
+            </div>
+            <div class="div1">
+                <h1>แบบฟอร์มข้อมูลเบื้องต้นสำหรับผู้ลงทะเบียน</h1>
+            </div>
+            <div class="div2">
+                <div class="div3">
+                    <img src="../img/status.png" style="width: fit-content;">
+                </div>
+                <div class="div4">
+                    <div style="border-bottom: 2px solid gray;">
+                        <h2>ประวัติส่วนตัว</h2>
+                    </div>
+                    <div>
+                        <p style="color: rgba(0, 0, 0, 0.686);">ชื่อ-นามสกุล</p>
+                    </div>
+                    <div>
+                        <p style="background-color: #f9fafb; border: 1px solid gray; border-radius: 8px; font-size: 14px; padding: 2%;">นางสาวธนสรณ์ ธงกระโทน</p>
+                    </div>
+                    <div>
+                        <p style="color: rgba(0, 0, 0, 0.686);">เลขประจำตัวประชาชน</p>
+                    </div>
+                    <div>
+                        <p style="background-color: #f9fafb; border: 1px solid gray; border-radius: 8px; font-size: 14px; padding: 2%;">1-3099-xxxxx-xx-x</p>
+                    </div>
+                    <div>
+                        <p style="color: rgba(0, 0, 0, 0.686);">เบอร์โทรศัพท์มือถือ</p>
+                    </div>
+                    <div>
+                        <p style="background-color: #f9fafb; border: 1px solid gray; border-radius: 8px; font-size: 14px; padding: 2%;">099-999-9999</p>
+                    </div>
+                    <div>
+                        <p style="color: rgba(0, 0, 0, 0.686);">อีเมล</p>
+                    </div>
+                    <div style="display: flex; gap: 10px; width: 100%; align-items: center;">
+                        <!-- Email box -->
+                        <div style="flex: 1;">
+                          <p style="
+                            background-color: #f9fafb;
+                            border: 1px solid gray;
+                            border-radius: 8px;
+                            font-size: 16px;
+                            padding: 12px 16px;
+                            margin: 0;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                          ">
+                            admintest@pea.ac.th
+                          </p>
+                        </div>
+                      
+                        <!-- Edit button -->
+                        <div style="flex-shrink: 0;">
+                          <a style="
+                            background-color: #640da2;
+                            color: white;
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            padding: 10px 16px;
+                            font-size: 16px;
+                            text-decoration: none;
+                          " href="#">
+                            <img src="../img/edit.png" style="width: 24px; height: 24px;">
+                            แก้ไขข้อมูล
+                          </a>
+                        </div>
+                      </div>
+                      
+                    <div>
+                        <p style="color: rgba(0, 0, 0, 0.686);">การยืนยันตัวตน</p>
+                    </div>
+                    <div style="display: inline-flex; width: 100%; align-items: center; gap: 10px;">
+                        <img src="../img/verified.png" style="width: 4%; height: 4%;">
+                        <p style="color: #00ff0c;">พิสูจน์ตัวตนผ่าน ThaiD เรียบร้อยแล้ว</p>
+                    </div>
+                    <div>
+                        <p style="color: rgba(0, 0, 0, 0.686);">ตั้งค่าการแจ้งเตือน</p>
+                    </div>
+                    <div style="width: 100%;">
+                        <div class="switch-container">
+                          <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                          </label>
+                          <p class="label-text">รับ OTP เพื่อเข้าสู่ระบบผ่าน SMS</p>
+                        </div>
+                      
+                        <div class="switch-container">
+                          <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                          </label>
+                          <p class="label-text">รับการแจ้งเตือนสถานะเอกสารผ่านทางอีเมล</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div style="width: 100%; margin-top: 15%;">
+                <div class="button-group">
+                    <a href="../index.html" class="Back-button"><span>ยกเลิก</span></a>
+                    <a href="../html/main.html" class="Next-button"><span>ถัดไป</span></a>
+            </div>
+        </div>
     </body>
+    <footer style="display: flex; width: 100%; text-align: center; align-items: center;">
+        <div style="width: 50%;">
+            <p style="color: rgba(0, 0, 0, 0.686);">2022 ระบบบริหารจัดการผู้ขาย | Vendor Master Management System</p>
+        </div>
+        <div style="width: 50%;">
+            <p style="color: rgba(0, 0, 0, 0.686);">ฝ่ายจัดหา (ฝจห.) x ฝ่ายพัฒนาระบบดิจิทัล (ฝพจ.) |   การไฟฟ้าส่วนภูมิภาค</p>
+        </div>
+    </footer>
 </html>

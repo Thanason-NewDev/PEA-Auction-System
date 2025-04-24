@@ -1,110 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
+  <meta charset="UTF-8">
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f0f2f5;
-      margin: 0;
-    }
-
-    .navbar {
+    .switch-container {
       display: flex;
-      background-color: #ffffff;
-      padding: 10px 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .nav-left, .nav-center, .nav-right {
-      display: flex;
-      justify-content: center;
       align-items: center;
+      margin-bottom: 15px;
     }
 
-    .nav-left {
-      width: 20%;
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 28px;
+      margin-right: 10px;
     }
 
-    .nav-center {
-      width: 60%;
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
     }
 
-    .nav-right {
-      width: 20%;
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
     }
 
-    .logopea {
-      height: 40px;
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px; width: 20px;
+      left: 4px; bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
     }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 30px;
+    input:checked + .slider {
+      background-color: #4caf50;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(22px);
+    }
+
+    .label-text {
+      color: rgba(0, 0, 0, 0.686);
       margin: 0;
-      padding: 0;
-    }
-
-    .nav-links li a {
-      color: black;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links li a:hover {
-      color: #9333ea;
-    }
-
-    .nav-icons {
-      display: flex;
-      gap: 15px;
-    }
-
-    .logout-btn {
-      background-color: transparent;
-      border: none;
-      padding: 6px;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-
-    .logout-btn:hover {
-      background-color: #ff4d4d;
-    }
-
-    .logout-btn img {
-      width: 20px;
-      height: auto;
     }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <!-- ซ้าย 20% -->
-    <div class="nav-left">
-      <img src="../img/logopea.png" class="logopea">
-    </div>
 
-    <!-- กลาง 60% -->
-    <div class="nav-center">
-      <ul class="nav-links">
-        <li><a href="#">หน้าหลัก</a></li>
-        <li><a href="#">รายการประมูล</a></li>
-        <li><a href="#">รายการสั่งซื้อของฉัน</a></li>
-        <li><a href="#">ขอคืนหลักประกัน</a></li>
-        <li><a href="#">คำถามที่พบบ่อย</a></li>
-        <li><a href="#">ติดต่อเรา</a></li>
-      </ul>
-    </div>
+<div style="width: 100%;">
+  <div class="switch-container">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider"></span>
+    </label>
+    <p class="label-text">รับ OTP เพื่อเข้าสู่ระบบผ่าน SMS</p>
+  </div>
 
-    <!-- ขวา 20% -->
-    <div class="nav-right">
-      <div class="nav-icons">
-        <a href="../index.html" class="logout-btn"><img src="../img/shopping-cart.png"></a>
-        <a href="../index.html" class="logout-btn"><img src="../img/bell.png"></a>
-        <a href="../index.html" class="logout-btn"><img src="../img/logout.png"></a>
-      </div>
-    </div>
-  </nav>
+  <div class="switch-container">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider"></span>
+    </label>
+    <p class="label-text">รับการแจ้งเตือนสถานะเอกสารผ่านทางอีเมล</p>
+  </div>
+</div>
+
 </body>
 </html>
