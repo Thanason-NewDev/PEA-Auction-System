@@ -205,3 +205,27 @@ body {
     background-color:#000;
     border-color:#000
 }
+
+.bt1{
+  background-color: #7e2cba; 
+  color: white; 
+  border-radius: 8px; 
+  font-size: 20px; 
+  padding: 2% 10%; 
+  border-color: #7e2cba;
+}
+
+.bt1:hover{
+  background-color: #5d2188;
+  border-color: #5d2188;
+}
+
+.a1{
+  border: 1px solid gray; 
+  padding: 2px; 
+  width: 50%; 
+  border-radius: 8px;
+}
+.a1:hover {
+  background-color: #b15eff;
+}
