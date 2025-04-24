@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTP Input</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+      margin: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .otp-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .otp-input {
+  width: 14%;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid black;  /* กรอบสีดำ */
+  border-radius: 8px;
+}
+
+.otp-input:focus {
+  border-color: #007bff;  /* เมื่อโฟกัสจะเป็นสีฟ้า */
+  outline: none;
+}
+
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .Back-button, .btn-next {
+      display: inline-block;
+      width: 48%;
+      text-align: center;
+      padding: 12px 0;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .Back-button {
+      border: 2px solid black;
+      color: black;
+      background-color: white;
+    }
+
+    .btn-next {
+      background-color: gray;
+      color: black;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .btn-next.active {
+      background-color: #28a745;
+      color: white;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #timer {
+      font-size: 20px;
+      color: #dc3545;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>กรอกข้อมูลช่องทางรับ OTP</h2>
+    <img src="../img/iconwarning.png" id="statusIcon" style="height: 30%; width: 30%; margin-top: 10%;" class="flicker-image">
+    
+    <div class="otp-box">
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+    </div>
+
+    <div id="timer">05:00</div>
+
+    <div class="button-group">
+      <a href="../html/login.html" class="Back-button"><span>ยกเลิก</span></a>
+      <a href="../html/otppass.html" id="nextLink" class="btn-next"><span>ถัดไป</span></a>
+    </div>
+  </div>
+
+  <script>
+    const inputs = document.querySelectorAll('.otp-input');
+    const nextBtn = document.getElementById('nextLink');
+    const icon = document.getElementById('statusIcon');
+    const timerDisplay = document.getElementById('timer');
+  
+    let countdown; // ต้องย้ายตัวแปรออกมาเพื่อให้สามารถ clear ได้จาก function อื่น
+  
+    function checkOTP() {
+      const allFilled = [...inputs].every(input => input.value.trim() !== '');
+      nextBtn.classList.toggle('active', allFilled);
+      icon.src = allFilled ? '../img/iconcorrect.png' : '../img/iconwarning.png';
+  
+      // ถ้าใส่ครบแล้ว ให้หยุดตัวจับเวลา
+      if (allFilled) {
+        clearInterval(countdown);
+      }
+    }
+  
+    inputs.forEach(input => {
+      input.addEventListener('input', () => {
+        if (input.value.length === 1) {
+          const next = input.nextElementSibling;
+          if (next && next.classList.contains('otp-input')) {
+            next.focus();
+          }
+        }
+        checkOTP();
+      });
+    });
+  
+    // เริ่มจับเวลา 5 นาที
+    let timeLeft = 5 * 60;
+    countdown = setInterval(() => {
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      const seconds = String(timeLeft % 60).padStart(2, '0');
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+      timeLeft--;
+  
+      if (timeLeft < 0) {
+        clearInterval(countdown);
+        const allFilled = [...inputs].every(input => input.value.trim() !== '');
+        if (!allFilled) {
+          alert('หมดเวลา กรุณาขอ OTP ใหม่');
+          window.location.href = "../html/login.html";
+        }
+      }
+    }, 1000);
+  </script>
+  
