@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>รายการประมูล</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+
+      .custom-table th, .custom-table td {
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .btn-purple {
+        background-color: #6c2bd9;
+        color: white;
+      }
+
+      .btn-purple:hover {
+        background-color: #5620b0;
+      }
+
+      .checkbox-purple {
+        appearance: none;
+        -webkit-appearance: none;
+        background-color: #fff;
+        border: 2px solid #6c2bd9;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        transition: background 0.3s ease;
+      }
+
+      .checkbox-purple:checked {
+        background-color: #6c2bd9;
+      }
+
+      .checkbox-purple:checked::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        width: 5px;
+        height: 10px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      .btn-outline-secondary {
+        color: black;
+      }
+  .custom-pagination .page-link {
+  color: #6c2bd9; /* สีข้อความ */
+  border: 1px solid #6c2bd9;
+}
+
+.custom-pagination .page-link:hover {
+  background-color: #f3eaff; /* สีพื้นหลัง hover */
+  color: #6c2bd9;
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: plum;
+  border-color: #6c2bd9;
+  color: white;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container position-relative">
+      <h2 class="mb-4"><strong>รายการประมูล</strong></h2>
+      <br>
+      <table class="table table-bordered custom-table">
+        <thead class="table-light">
+          <tr>
+            <th>เลือก</th>
+            <th>เลขที่ประกาศ</th>
+            <th>ชื่อสินค้า</th>
+            <th>จำนวน (กิโลกรัม)</th>
+            <th>วันที่ประมูล</th>
+            <th>ราคาเปิดประมูล</th>
+            <th>ราคาหลักประกัน</th>
+            <th>สถานที่รับของ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            const rows = 10;
+            for (let i = 0; i < rows; i++) {
+              document.write(`
+                <tr>
+                  <td><input type="checkbox" class="checkbox-purple" ${i < 6 ? 'checked' : ''}></td>
+                  <td>กจค.(ชสพ)1/2568</td>
+                  <td>เศษสายอลูมิเนียมหุ้มฉนวน</td>
+                  <td>23,500</td>
+                  <td>11 ก.พ. 2568</td>
+                  <td>1,000,000.00</td>
+                  <td>50,000</td>
+                  <td>กฟฟ.เมืองสกล</td>
+                </tr>
+              `);
+            }
+          </script>
+        </tbody>
+      </table>
+
+      <nav class="mt-4">
+        <ul class="pagination justify-content-center custom-pagination">
+          <li class="page-item">
+            <a class="page-link" href="Table.html"><i class="bi bi-arrow-left"></i></a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="Table.html">1</a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="รายการประมูณ.html">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="รายการประมูณ.html"><i class="bi bi-arrow-right"></i></a>
+          </li>
+        </ul>
+      </nav>
+      
+
+      <div class="d-flex justify-content-end gap-2 mt-4">
+        <button class="btn btn-outline-secondary"><i class="bi bi-cart"></i><strong>&nbsp;เพิ่มไปยังรถเข็น</strong></button>
+        <button class="btn btn-purple"><strong>ชำระเงิน</strong></button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

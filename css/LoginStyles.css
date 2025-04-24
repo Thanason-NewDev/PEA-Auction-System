@@ -73,7 +73,7 @@ body {
   input[type="email"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 8px;
     margin-bottom: 15px;
     font-size: 14px;
